@@ -1,0 +1,35 @@
+{% extends 'theme-admin.html' %}
+
+{% block body_content %}
+<h1> Search Students </h1>
+
+	Search: <input id="keyword" type="text" name="keyword" onkeyup="searchStudent()"/>
+
+<div id="result">
+</div>
+{% endblock %}
+
+{% block body_js %}
+<script type="text/javascript">
+	
+	function searchStudent(){
+
+		var keyword = $('#keyword').val();
+
+		// GET AJAX request
+        $.ajax({
+            type: 'GET',
+            url: "{% url 'search' %}",
+            data: {"keyword": keyword},
+            success: function (response) {
+                $('#result').html(response);
+            },
+            error: function (response) {
+                alert(response);
+            }
+        });
+
+	}
+
+</script>
+{%endblock%}
