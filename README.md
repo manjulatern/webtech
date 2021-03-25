@@ -40,3 +40,10 @@
 6. Run Application
 
 	`python manage.py runserver`
+
+
+# Facebook OAUTH Tutorial References
+1. Blog: https://www.digitalocean.com/community/tutorials/django-authentication-with-facebook-instagram-and-linkedin
+2. Youtube: https://www.youtube.com/watch?v=oAWUyg_PPLk
+
+Note: Use SOCIAL_AUTH_REDIRECT_IS_HTTPS = True in settings.py 

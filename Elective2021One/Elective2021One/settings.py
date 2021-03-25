@@ -25,7 +25,7 @@ SECRET_KEY = '@=m8d+81+60s3u4_8-@boc6=#gg4_1ayutah4%kt8k7^v4s_t_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'studentsapp',
-    'userapp',
+    'core',
     'themeapp',
     'social_django'
 ]
@@ -112,14 +112,28 @@ AUTHENTICATION_BACKENDS = [
                     'social_core.backends.facebook.FacebookOAuth2',
                     ]
 
-LOGIN_URL = 'user'
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
-LOGOUT_REDIRECT_URL = 'user'
 
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {       # add this
+  'fields': 'id, name, email, picture.type(large), link'
+}
+SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [                 # add this
+    ('name', 'name'),
+    ('email', 'email'),
+    ('picture', 'picture'),
+    ('link', 'profile_url'),
+]
 
-SOCIAL_AUTH_FACEBOOK_KEY = '3776736415774253'
-SOCIAL_AUTH_FACEBOOK_SECRET = '3ef88db059a6f72c21f24b820fa09efe'
+SOCIAL_AUTH_FACEBOOK_KEY = '351440886205727'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'a33bf858134e0318d12c24da7325ef96'
+
+SESSION_COOKIE_SAMESITE = None
+
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
