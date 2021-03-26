@@ -4,6 +4,16 @@
 <div class="row">
     <div class="col-sm-12 mb-3">
         <h4 class="text-center"> Welcome {{ user.username }} </h4>
+                <h4 class="text-center"> Welcome {{ user.email }} </h4>
+
+     {% for ass in backends.associated %}
+       {% if ass.provider == 'facebook' %}
+ <div class="col-md-6 text-center">
+             <img src="{{ass.extra_data.picture.data.url}}" alt="" width="150" height="150" style="border-radius: 50%">
+         </div>
+        {% endif %}
+        {% endfor %}
+
     </div>
 </div>
 {% endblock %}
