@@ -69,6 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends', # add this
+                'social_django.context_processors.login_redirect', # add this
             ],
         },
     },
@@ -127,8 +129,8 @@ SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [                 # add this
     ('link', 'profile_url'),
 ]
 
-SOCIAL_AUTH_FACEBOOK_KEY = '351440886205727'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'a33bf858134e0318d12c24da7325ef96'
+SOCIAL_AUTH_FACEBOOK_KEY = '<Please Enter Here...>'
+SOCIAL_AUTH_FACEBOOK_SECRET = '<Please Enter Here...>'
 
 SESSION_COOKIE_SAMESITE = None
 
