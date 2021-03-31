@@ -1,0 +1,40 @@
+{% extends 'theme-admin.html' %}
+
+{% block body_css %}
+<link href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+{% endblock %}
+{% block body_content %}
+<h1> Students - Datatable Implementation </h1>
+
+<table id="studentList" class="table table-responsive table-striped table-bordered" style="width:100%">
+<thead>
+    <tr>
+        <td>Roll Number</td>
+        <td>Name</td>
+        <td>Address</td>
+    </tr>
+</thead>
+<tbody>
+{% for student in students %}
+    <tr>
+        <td>{{student.roll_number}}</td>
+        <td>{{student.full_name}}</td>
+        <td>{{student.address}}</td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
+
+{% block body_js %}
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#studentList').DataTable({
+        pageLength: 5
+    });  
+});
+</script>
+{%endblock%}
