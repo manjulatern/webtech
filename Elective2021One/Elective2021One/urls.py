@@ -21,6 +21,7 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('student/', include('studentsapp.urls')),
+    path('weather/', include('weatherapp.urls')),
     
     path("login/", views.login, name="login"),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),

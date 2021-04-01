@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'studentsapp',
     'core',
     'themeapp',
-    'social_django'
+    'social_django',
+    'weatherapp'
 ]
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'

@@ -1,0 +1,39 @@
+{% extends 'theme-admin.html' %}
+
+{% block body_content %}
+<h1> Weather App </h1>
+
+<label> Search by City </label>
+
+<input type="text" id="city_name" name="city"/>
+
+<button type="button" onclick="getWeatherByCity()" class="btn btn-primary">Get Weather</button>
+
+<div id="weather_data">
+</div>
+{% endblock %}
+
+{% block body_js %}
+<script type="text/javascript">
+  
+  function getWeatherByCity(){
+
+    var city = $('#city_name').val();
+
+    // GET AJAX request
+        $.ajax({
+            type: 'GET',
+            url: "{% url 'search' %}",
+            data: {"city": city},
+            success: function (response) {
+                $('#weather_data').html(response);
+            },
+            error: function (response) {
+                alert(response);
+            }
+        });
+
+  }
+
+</script>
+{%endblock%}
