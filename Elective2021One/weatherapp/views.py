@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 import requests
 
-WEATHER_API_KEY = '<Enter your WeatherAPI Key HERE>'
+WEATHER_API_KEY = '63ad24b403c944e6be125338210104'
 # Create your views here.
 def index(request):
 	template = loader.get_template('weather_home.html')

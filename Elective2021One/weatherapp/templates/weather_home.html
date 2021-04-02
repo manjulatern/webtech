@@ -23,7 +23,7 @@
     // GET AJAX request
         $.ajax({
             type: 'GET',
-            url: "{% url 'search' %}",
+            url: "{% url 'weather_search' %}",
             data: {"city": city},
             success: function (response) {
                 $('#weather_data').html(response);
