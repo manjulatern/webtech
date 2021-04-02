@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'core',
     'themeapp',
     'social_django',
-    'weatherapp'
+    'weatherapp',
+    'ecommerceapp',
 ]
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'

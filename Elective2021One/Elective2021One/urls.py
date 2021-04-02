@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('student/', include('studentsapp.urls')),
     path('weather/', include('weatherapp.urls')),
+    path('ecommerce/', include('ecommerceapp.urls')),
     
     path("login/", views.login, name="login"),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),

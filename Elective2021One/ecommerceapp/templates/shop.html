@@ -1,0 +1,36 @@
+{% extends 'theme-admin.html' %}
+{% block title %} Ecommerce | Shop {% endblock %}
+{% block body_content %}
+
+<h3> <span class="badge badge-secondary">My Cart [<span id="cart_items">0</span>] items</span></h3>
+<a class="btn btn-info" href="">View Cart</a>
+<a class="btn btn-success" href="">Checkout</a>
+<div class="row mt-3">
+             <!-- Pending Requests Card Example -->
+
+             {% for product in products %}
+            <div class="card" style="width: 18rem;">
+			  <img src="{{product.image}}" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">{{product.product_name}}</h5>
+			    <h5 class="card-text"><span class="badge badge-primary">{{product.product_code}}</span></h5>
+			    <h6 class="card-title">NRs. {{product.price}}</h6>
+			    
+			  </div>
+			  <div class="card-body">
+			    <a href="#" onclick="addToCart()" class="card-link">Add to Cart</a>
+			  </div>
+			</div>
+            {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block body_js %}
+<script type="text/javascript">
+function addToCart(){
+	$('#cart_items').html(1);
+}
+</script>
+
+{%endblock%}
